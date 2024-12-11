@@ -120,8 +120,7 @@
 					<div class="mb-3 row">
 						<label class="col-sm-2"><fmt:message key="information" bundle="${bundle}"/></label>
 						<div class="col-sm-8">
-							<textarea rows="3" cols="50" name="information" id="information" class="form-control" placeholder="10자 이상 입력해주세요." style="resize: none">
-							</textarea>
+							<textarea rows="3" cols="50" name="information" id="information" class="form-control" placeholder="10자 이상 입력해주세요." style="resize: none"></textarea>
 						</div>
 					</div>
 					

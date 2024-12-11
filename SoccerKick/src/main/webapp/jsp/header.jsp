@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%	
-	//HttpSession userSession = request.getSession(true);
-	//String sessionId = userSession.getAttribute("sessionId").toString();
-	//String sessionId = (String)session.getAttribute("sessionId");
-%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"  />
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +24,7 @@
 		<div class="container">
 		<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 		<a href="<c:url value="/jsp/welcome.jsp"/>" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-		<img src="<c:url value="../img/logo.svg" />" class="bi bi-house-fill" viewBox="0 0 16 16" width="32" height="32">
+		<img src="${contextPath}/img/logo.svg" class="bi bi-house-fill" viewBox="0 0 16 16" width="32" height="32">
 		<span class="fs-4">🅂🄾🄲🄲🄴🅁🄺🄸🄲🄺</span>
 		</a>
 		<ul class="nav nav-pills">
@@ -43,7 +39,7 @@
 			<li class="nav-item"><a href="<c:url value="/jsp/addProduct.jsp"/>" class="nav-link">상품 등록</a></li>
 			<li class="nav-item"><a href="<c:url value="/jsp/listMain_edit.jsp?edit=edit"/>" class="nav-link">상품 수정</a></li>
 			<li class="nav-item"><a href="<c:url value="/jsp/member/updateMember.jsp"/>" class="nav-link">정보 수정</a></li>
-			<li class="nav-item"><a href="<c:url value="/jsp/member/logoutController.jsp"/>" class="nav-link">로그아웃</a></li>
+			<li class="nav-item"><a href="<c:url value="/jsp/member/logoutMemberController.jsp"/>" class="nav-link">로그아웃</a></li>
 			</c:otherwise>
 		</c:choose>
 		</ul>

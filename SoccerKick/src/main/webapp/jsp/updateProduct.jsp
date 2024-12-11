@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"  />
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +34,7 @@
 		%>
 			<div class="row align-items-md-stretch">
 				<div class="col md-5">
-					<img src="http://localhost:8100/SoccerKick/img/<%=rs.getString("img")%>" alter="img" style="width: 70%"/>
+					<img src="${contextPath}/img/<%=rs.getString("img")%>" alter="img" style="width: 70%"/>
 				</div>
 			<div class="col-md-6">
 				<form name="newProduct" action="updateProductController.jsp" method="post" enctype="multipart/form-data">
@@ -101,9 +103,7 @@
 					<div class="mb-3 row">
 						<label class="col-sm-2">상품 정보</label>
 						<div class="col-sm-8">
-							<textarea rows="3" cols="50" id="information" id="information" class="form-control"style="resize: none">
-							<%=rs.getString("information") %>
-							</textarea>
+							<textarea rows="3" cols="50" id="information" id="information" class="form-control"style="resize: none"><%=rs.getString("information")%></textarea>
 						</div>
 					</div>
 					

@@ -10,9 +10,12 @@
 	
 	<%
 		HttpSession userSession = request.getSession();
+	
+		//세션 다 날리기
+		//session.invalidate();
+		
 		userSession.removeAttribute("sessionId");
-		RequestDispatcher dis = request.getRequestDispatcher("/jsp/welcome.jsp");
-		dis.forward(request, response);
+		response.sendRedirect("/jsp/welcome.jsp");
 	%>
 </body>
 </html>

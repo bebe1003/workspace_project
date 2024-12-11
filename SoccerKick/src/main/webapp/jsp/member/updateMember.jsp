@@ -9,14 +9,21 @@
 <meta charset="UTF-8">
 <title>회원 정보 수정</title>
 <script type="text/javascript">
-	function deleteUser() {
+	function deleteUser(){
+		var id= document.getElementById("id").value;
+		alert(id);
 		if(confirm('회원을 삭제 하시겠습니까?')){
-			location.href="deleteMemberController.jsp";
+			location.href="deleteMemberController.jsp?;
 		}else{
 			return;
 		}
 	}
 	
+	
+/* 	var nowTime = Date.now()
+	var selectTime = new Date().getTimezoneOffset()*60000;
+	var today = new Date(nowTime-selectTime).toISOString().split("T")[0];
+	document.getElementById("birth").setAttribute("max", today); */
 </script>
 </head>
 <body>
@@ -25,18 +32,12 @@
 	HttpSession httpsession = request.getSession();
 	String getId = httpsession.getId();
 	
-	out.println(getId+"<br>");
-	out.println(session.getAttribute("sessionId")+"<br>");
-	out.println(session.getId()+"<br>");
 	
 	Map<String, String> map = (Map<String,String>)httpsession.getAttribute("user");
 	
 	String sessionid = map.get("id");
 	String sessionpwd = map.get("pwd");
 	
-	out.println(sessionid);
-	out.println(sessionpwd);
-	out.println(httpsession.getAttributeNames().toString());
 	
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -79,7 +80,6 @@
 			</div>
 		</div>
 
-	
 		<div class="row align-items-md-stretch">
 		<form name="registerForm" action="updateMemberController.jsp" enctype="UTF-8" method="post">
 		
@@ -167,9 +167,6 @@
 		 <button class="btn btn-outline-info" type="submit">정보수정</button>
 		 <button class="btn btn-outline-danger" type="button" onclick="deleteUser()">회원 삭제</button>
 		</form>
-		
-		
-	
 	</div>
 	<%@include file="/jsp/footer.jsp"%>	
 		</div>

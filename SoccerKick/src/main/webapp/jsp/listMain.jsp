@@ -15,7 +15,7 @@
 <title>상품 리스트</title>
 <style type="text/css">
 .border-button:hover{
-  border: 2px solid silver;
+  border: 1px solid silver;
 }
 </style>
 </head>

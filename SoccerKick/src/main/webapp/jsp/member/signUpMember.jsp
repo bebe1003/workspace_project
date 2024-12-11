@@ -51,7 +51,7 @@ function idCheck(){
 			<!-- 번들 위치 지정 -->
 	<fmt:setBundle basename="Soccer.bundle.message" var="bundle"/>
 	<div class="container py-4">
-		<%@ include file="../header.jsp" %>
+		<%@ include file="/jsp/header.jsp" %>
 			<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 			<div class="container-fluid py-5">
 				<h1 class="display-5 fw-bold">회원가입</h1>

@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="javax.swing.text.DateFormatter"%>
 <%@page import="java.text.DateFormat"%>
@@ -103,7 +105,18 @@
 		//회원가입 DB에 저장
 		pstmt.executeUpdate();
 		
-		//response.sendRedirect("/jsp/welcome.jsp");
+		//회원정보 저장해서 포워딩해서 회원가입 결과를 알려준다.
+		List<String> user = new ArrayList<String>();
+		user.add("아이디 :"+id);
+		user.add("비밀번호:"+pwd1);
+		user.add("이름:"+name);
+		user.add("성별:"+gender);
+		user.add("생일:"+birth);
+		user.add("이메일:"+mail);
+		user.add("전화/핸드폰 번호:"+phone);
+		user.add("주소:"+address);
+		user.add("회원가입 날짜:"+regist_day);
+		request.setAttribute("user", user);
 		dis = request.getRequestDispatcher("resultMember.jsp");
 		dis.forward(request, response);
 	}
